@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
-    background: linear-gradient(#00000066, #00000066), url("../images/background/light.jpg") black no-repeat center center scroll;
+    background: linear-gradient(#00000066, #00000066), url("../images/background/bg.png") black no-repeat center center;
 }
 
 img {
@@ -81,58 +81,11 @@ img {
 
 .preload-content {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.preload-progress {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 127px;
-}
-
-.dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    margin-left: 14px;
-    margin-top: 12px;
-    background: #ffffff;
-    border-radius: 50%;
-    transform: translateX(0);
-    animation: dot 2.8s infinite;
-}
-
-.dots {
-    transform: translateX(0);
-    margin-top: 12px;
-    margin-left: 31px;
-    animation: dots 2.8s infinite;
-}
-
-.dots span {
-    display: block;
-    float: left;
-    width: 16px;
-    height: 16px;
-    margin-left: 16px;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-@keyframes dot {
-    50% {
-        transform: translateX(96px);
-    }
-}
-
-@keyframes dots {
-    50% {
-        transform: translateX(-31px);
-    }
-}
 
 .preload-title {
     font: normal normal bold 30px/40px Poppins;

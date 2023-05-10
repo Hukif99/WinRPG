@@ -19,7 +19,6 @@ class Settings {
         this.initTab();
         this.initAccount();
         this.initRam();
-        this.initLauncherSettings();
     }
 
     initAccount() {
@@ -61,26 +60,22 @@ class Settings {
     async initRam() {
         let ramDatabase = (await this.database.get('1234', 'ram'))?.value;
         let totalMem = Math.trunc(os.totalmem() / 1073741824 * 10) / 10;
-        let freeMem = Math.trunc(os.freemem() / 1073741824 * 10) / 10;
-
-        document.getElementById("total-ram").textContent = `${totalMem} Go`;
-        document.getElementById("free-ram").textContent = `${freeMem} Go`;
 
         let sliderDiv = document.querySelector(".memory-slider");
         sliderDiv.setAttribute("max", Math.trunc((80 * totalMem) / 100));
 
-        let ram = ramDatabase ? ramDatabase : { ramMin: "1", ramMax: "2" };
+        let ram = ramDatabase ? ramDatabase : { ramMin: "4", ramMax: "6" };
         let slider = new Slider(".memory-slider", parseFloat(ram.ramMin), parseFloat(ram.ramMax));
 
         let minSpan = document.querySelector(".slider-touch-left span");
         let maxSpan = document.querySelector(".slider-touch-right span");
 
-        minSpan.setAttribute("value", `${ram.ramMin} Go`);
-        maxSpan.setAttribute("value", `${ram.ramMax} Go`);
+        minSpan.setAttribute("value", `${ram.ramMin} Gb`);
+        maxSpan.setAttribute("value", `${ram.ramMax} Gb`);
 
         slider.on("change", (min, max) => {
-            minSpan.setAttribute("value", `${min} Go`);
-            maxSpan.setAttribute("value", `${max} Go`);
+            minSpan.setAttribute("value", `${min} Gb`);
+            maxSpan.setAttribute("value", `${max} Gb`);
             this.database.update({ uuid: "1234", ramMin: `${min}`, ramMax: `${max}` }, 'ram')
         });
     }
@@ -215,23 +210,7 @@ class Settings {
     }
 
     initTab() {
-        let TabBtn = document.querySelectorAll('.tab-btn');
-        let TabContent = document.querySelectorAll('.tabs-settings-content');
-
-        for (let i = 0; i < TabBtn.length; i++) {
-            TabBtn[i].addEventListener('click', () => {
-                if (TabBtn[i].classList.contains('save-tabs-btn')) return
-                for (let j = 0; j < TabBtn.length; j++) {
-                    TabContent[j].classList.remove('active-tab-content');
-                    TabBtn[j].classList.remove('active-tab-btn');
-                }
-                TabContent[i].classList.add('active-tab-content');
-                TabBtn[i].classList.add('active-tab-btn');
-            });
-        }
-
         document.querySelector('.save-tabs-btn').addEventListener('click', () => {
-            document.querySelector('.default-tab-btn').click();
             changePanel("home");
         })
     }

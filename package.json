@@ -1,11 +1,11 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "1.2.",
-    "description": "Launcher Mincraft custom (crack, premium)",
+    "name": "greeko-launcher",
+    "preductname": "greeko-launcher",
+    "version": "1.0.0",
+    "description": "Hola!",
     "main": "src/app.js",
     "author": "Luuxis",
-    "url": "http://craftdium.ml/launcherSelvania",
+    "url": "http://35.232.23.136",
     "engines": {
         "node": "^18.x.x"
     },
@@ -32,6 +32,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/Hukif99/WinRPG.git"
     }
 }

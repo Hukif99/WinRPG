@@ -96,6 +96,7 @@ class Home {
             let launcherSettings = (await this.database.get('1234', 'launcher')).value;
 
             let playBtn = document.querySelector('.play-btn');
+            let configBtn = document.querySelector('.settings-btn');
             let info = document.querySelector(".text-download")
             let progressBar = document.querySelector(".progress-bar")
 
@@ -115,7 +116,7 @@ class Home {
                 path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
                 version: this.config.game_version,
                 detached: launcherSettings.launcher.close === 'close-all' ? false : true,
-                downloadFileMultiple: 30,
+                downloadFileMultiple: 5,
 
                 loader: {
                     type: this.config.loader.type,
@@ -135,6 +136,7 @@ class Home {
             }
 
             playBtn.style.display = "none"
+            configBtn.style.display = "none"    
             info.style.display = "block"
             launch.Launch(opts);
 
