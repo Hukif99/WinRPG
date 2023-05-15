@@ -70,8 +70,8 @@ class Settings {
         let minSpan = document.querySelector(".slider-touch-left span");
         let maxSpan = document.querySelector(".slider-touch-right span");
 
-        minSpan.setAttribute("value", `${ram.ramMin} Gb`);
-        maxSpan.setAttribute("value", `${ram.ramMax} Gb`);
+        minSpan.setAttribute("value", `$4 Gb`);
+        maxSpan.setAttribute("value", `$6 Gb`);
 
         slider.on("change", (min, max) => {
             minSpan.setAttribute("value", `${min} Gb`);

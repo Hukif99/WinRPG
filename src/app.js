@@ -61,7 +61,7 @@ app.on('window-all-closed', () => {
 });
 
 
-autoUpdater.autoDownload = false;
+autoUpdater.autoDownload = true;
 
 ipcMain.handle('update-app', () => {
     return new Promise(async(resolve, reject) => {
