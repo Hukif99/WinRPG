@@ -1,11 +1,11 @@
 {
     "name": "greeko-launcher",
     "preductname": "greeko-launcher",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Hola!",
     "main": "src/app.js",
     "author": "Luuxis",
-    "url": "http://35.232.23.136",
+    "url": "http://34.122.34.141",
     "engines": {
         "node": "^18.x.x"
     },
