@@ -1,7 +1,7 @@
 {
-    "name": "Greeko Launcher",
-    "preductname": "greeko-launcher",
-    "version": "1.0.2",
+    "name": "greeko-launcher",
+    "preductname": "Greeko Launcher",
+    "version": "1.0.3",
     "description": "Hola!",
     "main": "src/app.js",
     "author": "Luuxis",
